@@ -72,9 +72,9 @@ class Scraper
                 return $matches[1];
             });
 
-            $data[$key]['content'] = $this->crawler->filter('.intro_panel')->each(function ($node) {
+            $data[$key]['description'] = implode(' ', $this->crawler->filter('.intro_panel')->each(function ($node) {
                 return $node->text();
-            });
+            }));
 
             $data[$key]['rooms'] = $this->crawler->filter('.rooms > div > ul > .rooms__list__menu__item')->each(function ($node) {
 

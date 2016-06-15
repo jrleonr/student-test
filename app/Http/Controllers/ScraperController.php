@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Scraper;
-use Goutte\Client;
 
 /**
  * Class ScraperController
@@ -15,16 +14,13 @@ class ScraperController extends Controller
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getAccommodations()
+    public function getAccommodations(Scraper $scraper)
     {
-
-        $scraper = new Scraper(new Client);
 
         $data = $scraper->visit('http://www.unite-students.com/liverpool')
                 ->getAccommodationsLinks()
                 ->getAccommodationsData();
- 
 
-      	return response()->json($data);
+        return view('pages.accommodation', ['accommodation' => $data[0]]);
     }
 }

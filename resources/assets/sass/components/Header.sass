@@ -1,0 +1,32 @@
+.Header
+	flex: 1 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	background: no-repeat center center
+	background-size: cover
+	height: 250px
+	
+	+has(title)
+		color: $headerTitle
+		text-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+		font-size: 50px
+		+font-smoothing
+		font-weight: 700
+
+	+has(subTitle)	
+		color: $headerSubtitle
+		text-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+		font-size: 18px
+		+font-smoothing
+		font-weight: 700
+		text-align: center
+
+		
+
+			
+
+		
+		
+	
+

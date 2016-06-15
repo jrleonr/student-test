@@ -1,0 +1,12 @@
+=has($name)
+	@at-root #{&}__#{$name}
+		@content
+
+=variant($name)
+	@at-root #{&}--#{$name}
+		@content
+
+=font-smoothing() 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
