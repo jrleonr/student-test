@@ -19,6 +19,13 @@ npm install
 gulp
 ```
 
+### Step 4: Set .env
+
+```
+mv .env.example .env
+php artisan key:generate
+```
+
 ### Quick try
 
 ```
